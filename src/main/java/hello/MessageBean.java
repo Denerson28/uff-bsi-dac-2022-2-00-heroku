@@ -7,8 +7,9 @@ package hello;
  */
 
 
-import java.beans.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.time.LocalTime;  
 
 /**
  *
@@ -31,14 +32,25 @@ public class MessageBean implements Serializable {
     public void setLang(String value) {
         lang = value;
     }
+    
     public String getMsg() {
+        LocalDateTime tempo = LocalDateTime.now();
+        if (tempo.getHour() >= 6 && tempo.getHour() < 12) {
+            return getMorningText();
+        } else if (tempo.getHour() >= 12 && tempo.getHour() < 18) {
+            return getAfternoonText();
+        }
+        return getEveningText();
+    }
+
+    public String getMorningText() {
         switch (this.lang){
             case "pt":
-                return "Alô";
+                return "Bom dia";
             case "en":
-                return "Hello";
+                return "Good morning";
             case "de":
-                return "Hallo";
+                return "Guten morgen";
             case "fr":
                 return "Bonjour";
         }
@@ -54,6 +66,34 @@ public class MessageBean implements Serializable {
                 return "Erstellt von";
             case "fr":
                 return "Créé par";
+        }
+        return "";
+    }
+
+    public String getAfternoonText() {
+        switch (this.lang){
+            case "pt":
+                return "Boa tarde";
+            case "en":
+                return "Good afternoon";
+            case "de":
+                return "Guten nachmittag";
+            case "fr":
+                return "Bon après-midi";
+        }
+        return "";
+    }
+
+    public String getEveningText() {
+        switch (this.lang){
+            case "pt":
+                return "Boa noite";
+            case "en":
+                return "Good evening";
+            case "de":
+                return "Guten abend";
+            case "fr":
+                return "Bonsoir";
         }
         return "";
     }
