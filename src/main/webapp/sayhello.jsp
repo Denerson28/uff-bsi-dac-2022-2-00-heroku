@@ -11,6 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>SayHello.jsp</title>
+        <jsp:getProperty name="myBean" property="header"/></h2>
     </head>
     <body>
         <jsp:useBean id="myBean" class="hello.MessageBean"/>
@@ -20,4 +21,8 @@
         <jsp:getProperty name="myBean" property="msg"/>, <%=request.getParameter("nome")%>!</h2>
         <jsp:getProperty name="myBean" property="msg2"/> <jsp:getProperty name="myBean" property="aut"/>
     </body>
+
+    <footer>
+        <jsp:getProperty name="myBean" property="footer"/></h2>
+    </footer>
 </html>

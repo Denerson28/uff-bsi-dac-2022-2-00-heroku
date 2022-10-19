@@ -21,6 +21,8 @@ public class MessageBean implements Serializable {
     private String lang;
     private String msg;
     private String msg2;
+    private String header;
+    private String footer;
         
     public MessageBean() {
     }
@@ -31,6 +33,14 @@ public class MessageBean implements Serializable {
     
     public void setLang(String value) {
         lang = value;
+    }
+
+    public String getHeader(){
+        return "Atividade DAC sobre Servidor Heroku";
+    }
+
+    public String getFooter(){
+        return "Aluno: Denerson Eduardo Gomes Berudio";
     }
     
     public String getMsg() {
