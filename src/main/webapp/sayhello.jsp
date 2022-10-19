@@ -13,17 +13,23 @@
         <title>SayHello.jsp</title>
     </head>
     <body>
+        
         <jsp:useBean id="myBean" class="hello.MessageBean"/>
         <header>
-            <jsp:getProperty name="myBean" property="header"/></h2>
+            <h1><jsp:getProperty name="myBean" property="header"/></h1>
         </header>
-        <h1>Aplicativo HelloWorld</h1>
-        <% String lang = request.getParameter("lang"); %>
-        <h2><jsp:setProperty name="myBean" property="lang" value="<%=lang%>"/>
-        <jsp:getProperty name="myBean" property="msg"/>, <%=request.getParameter("nome")%>!</h2>
-        <jsp:getProperty name="myBean" property="msg2"/> <jsp:getProperty name="myBean" property="aut"/>
+
+        <main>
+            <h1>Aplicativo HelloWorld</h1>
+            <% String lang = request.getParameter("lang"); %>
+            <h2><jsp:setProperty name="myBean" property="lang" value="<%=lang%>"/>
+            <jsp:getProperty name="myBean" property="msg"/>, <%=request.getParameter("nome")%>!</h2>
+            <jsp:getProperty name="myBean" property="msg2"/> <jsp:getProperty name="myBean" property="aut"/>
+
+        </main>
+
         <footer>
-            <jsp:getProperty name="myBean" property="footer"/></h2>
+            <h2><jsp:getProperty name="myBean" property="footer"/></h2>
         </footer>
     </body>
 </html>
